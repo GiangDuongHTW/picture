@@ -1,0 +1,53 @@
+@use '~rhenus-material/colors' as colors;
+@use '~rhenus-material/breakpoints' as breakpoints;
+.main {
+    width: 1200px;
+    padding: 72px 0 64px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: breakpoints.$max-mobile-width) {
+        width: 100%;
+        margin: 0;
+        padding: 72x 16px 64px;
+        box-sizing: border-box;
+    }
+    .taken-file {
+        width: 100%;
+        @media (max-width: breakpoints.$max-mobile-width) {
+            width: 80%;
+        }
+    }
+    .images {
+        position: relative;
+
+        img {
+            margin: 40px;
+            width: 450px;
+            height: 350px;
+
+            @media (max-width: breakpoints.$max-mobile-width) {
+                width: 200px;
+                height: 180px;
+                margin: 20px;
+            }
+        }
+        .close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            cursor: pointer;
+            font-weight: bold;
+            color: colors.$rhenus-blue;
+            border: 0px;
+            @media (max-width: breakpoints.$max-mobile-width) {
+                top: 4px;
+                right: 4px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="main">
+    <mat-form-field class="taken-file" appearance="outline" floatLabel="never">
+        <mat-label>Paste any picture here </mat-label>
+        <input (paste)="onPaste($event)" matInput />
+    </mat-form-field>
+
+    <section class="images" *ngFor="let imageUrl of imageUrls">
+        <img [src]="imageUrl" />
+        <button mat-flat-button mat-icon-button color="primary" class="close" (click)="deleteImage(imageUrl)">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </section>
+</div>
